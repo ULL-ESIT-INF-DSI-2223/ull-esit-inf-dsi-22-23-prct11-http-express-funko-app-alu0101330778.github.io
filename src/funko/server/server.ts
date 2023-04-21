@@ -23,8 +23,6 @@ app.get("/funko", (req, res) => {
   const response: ResponseType = {
     success: false,
   };
-  
-  
   if (typeof req.query.action !== undefined && req.query.action !== "") {
     if (typeof req.query.user !== undefined && req.query.user !== "") {
       
@@ -279,16 +277,7 @@ app.patch("/funko", (req, res) => {
   });
 });
 
-/**
- * Devuelve un mensaje de error si la direccion no es correcta
- */
-app.get("/*", (req, res) => {
-  const response: ResponseType = {
-    success: false,
-    error: "Bad address",
-  };
-  res.send(response);
-});
+
 /**
  * Funcion que escucha los mensajes que llegan al servidor
  */
@@ -307,8 +296,37 @@ app.post('/off', (req,res) => {
     process.exit(0);
   });
 });
-
-
+/**
+ * Devuelve un mensaje de error si la direccion no es correcta
+ */
+ app.get("/*", (req, res) => {
+  const response: ResponseType = {
+    success: false,
+    error: "Bad address",
+  };
+  res.send(response);
+});
+app.post('/*', (_req,res) => {
+  const response: ResponseType = {
+    success: false,
+    error: "Bad address",
+  };
+  res.send(response);
+});
+app.delete('/*', (_req,res) => {
+  const response: ResponseType = {
+    success: false,
+    error: "Bad address",
+  };
+  res.send(response);
+});
+app.patch('/*', (_req,res) => {
+  const response: ResponseType = {
+    success: false,
+    error: "Bad address",
+  };
+  res.send(response);
+});
 
 
 

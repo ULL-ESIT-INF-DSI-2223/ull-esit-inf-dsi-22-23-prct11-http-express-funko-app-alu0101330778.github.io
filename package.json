@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "start": "tsc-watch --onSuccess \"node dist/funko/server/server.js\"",
     "doc": "typedoc",
-    "c8": "c8 npm test",
+    "c8run": "c8 npm test",
     "test": "mocha",
     "coverage": "c8 npm test && c8 report --reporter=lcov"
   },
