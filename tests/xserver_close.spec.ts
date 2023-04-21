@@ -1,7 +1,8 @@
 import { expect } from "chai";
 import "mocha";
 import * as http from "http";
-
+import { server } from "../src/funko/server/server.js";
+const servidor = server;
 const options4 = {
     hostname: "localhost",
     port: 3000,

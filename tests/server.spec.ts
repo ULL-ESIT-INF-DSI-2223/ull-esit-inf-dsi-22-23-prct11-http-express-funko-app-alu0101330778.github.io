@@ -85,7 +85,7 @@ describe("Listar/Leer funkos", () => {
         const result = JSON.parse(data);
         expect(result.success).to.be.equal(true);
         done();
-      });
+      })
     });
 
     req.on("error", (error) => {
