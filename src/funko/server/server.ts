@@ -281,7 +281,7 @@ app.patch("/funko", (req, res) => {
 /**
  * Funcion que escucha los mensajes que llegan al servidor
  */
-const server = app.listen(3000, () => {
+export const server = app.listen(3000, () => {
   console.log("Server is up on port 3000");
 });
 

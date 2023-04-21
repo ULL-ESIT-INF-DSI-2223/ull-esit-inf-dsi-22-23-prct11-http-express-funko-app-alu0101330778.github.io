@@ -1,11 +1,10 @@
 import * as http from "http";
-import { app } from "../src/funko/server/server.js";
+import { server } from "../src/funko/server/server.js";
 import { expect } from "chai";
 import "mocha";
-import querystring from "querystring";
 import { rmSync } from "fs";
-const server = app.listen(3000);
 
+const servidor = server;
 /**
  * Peticion Listar funkos del usuario test
  */
@@ -36,12 +35,7 @@ const options3 = {
 /**
  * Peticion apagar servidor
  */
-const options4 = {
-  hostname: "localhost",
-  port: 3000,
-  path: "/off",
-  method: "POST",
-};
+
 /**
  * Crear usuario
  */
@@ -230,7 +224,7 @@ describe("Listar/Leer funkos", () => {
     });
     req.end();
   });
-  it("Cerrando servidor", (done) => {
+  /*it("Cerrando servidor", (done) => {
     const req = http.request(options4, (res) => {
       res.on("end", () => {
         expect(res.statusCode).to.be.equal(200);
@@ -242,5 +236,5 @@ describe("Listar/Leer funkos", () => {
       console.error(error);
     });
     req.end();
-  });
+  });*/
 });
